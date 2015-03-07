@@ -1,19 +1,28 @@
 package com.example.ernestwong.sidekick;
 
-import android.support.v7.app.ActionBarActivity;
+import android.bluetooth.BluetoothAdapter;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
 public class MainActivity extends ActionBarActivity {
 
+    BluetoothAdapter mBluetoothAdapter;
+    public static final int REQUEST_ENABLE_BT = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        handleBluetoothConnection();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -35,5 +44,15 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    
+    private void handleBluetoothConnection(){
+        if(mBluetoothAdapter == null) {
+            //handle
+        }
+        else if (!mBluetoothAdapter.isEnabled()) {
+              Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+              startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+        }
     }
 }
