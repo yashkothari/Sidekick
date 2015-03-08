@@ -23,7 +23,7 @@ SoftwareSerial blueToothSerial(RxD,TxD);
 void setup() 
 { 
   Serial.begin(9600);
-  
+  /*
   //Needs to write from the EEPROM library
   //Writing key patient data to EEPROM
   keyValueInput[0].key = 2; keyValueInput[0].value = "ID # : 1234";
@@ -52,18 +52,24 @@ void setup()
   keyValueInput[23].key = 46; keyValueInput[23].value = " - No alcohol or smoking";
   EEPROM.writeBlock(address, keyValueInput,24);
   EEPROM.readBlock(address, keyValueOutput,24);
-  
+  */
   pinMode(RxD, INPUT);
   pinMode(TxD, OUTPUT);
   setupBlueToothConnection(); 
 } 
- 
+
+String str;
 void loop() 
 { 
   char recvChar;
   while(1){
     if(blueToothSerial.available()){//check if there's any data sent from the remote bluetooth shield
-      recvChar = blueToothSerial.read();
+      //blueToothSerial.print("hello");
+      //blueToothSerial.flush();
+      
+      str =  blueToothSerial.readStringUntil('\n');
+      Serial.println(str);
+      /*
       Serial.print(recvChar);
       switch(recvChar)
       {
@@ -75,6 +81,7 @@ void loop()
         default:
           Serial.println("Command not valid");
       }
+      */
     }
     if(Serial.available()){//check if there's any data sent from the local serial terminal, you can add the other applications here
       recvChar  = Serial.read();
