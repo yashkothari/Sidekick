@@ -18,9 +18,10 @@ public class BluetoothConnectionReceiver extends BroadcastReceiver {
         if (BluetoothDevice.ACTION_FOUND.equals(action)) {
             // Get the BluetoothDevice object from the Intent
             BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-            // Add the name and address to an array adapter to show in a ListView
-            MainActivity.mArrayAdapter.add(device.getName() + "\n" + device.getAddress());
-            Log.d("mArrayAdapter", MainActivity.mArrayAdapter.getItem(MainActivity.mArrayAdapter.getCount() -1).toString());
+            Log.d("Device", device.getName() + " " + device.getAddress());
+
+            if(device.getName().contains("SideKick"))
+                MainActivity.mArrayAdapter.add(device);
         }
         /*if(BluetoothDevice.ACTION_ACL_CONNECTED.equals(action.getAction())){
             //Do something with bluetooth device connection
