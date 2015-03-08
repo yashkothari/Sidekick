@@ -37,8 +37,17 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        pairedList = (ListView) findViewById(R.id.paired_devices);
-        button = (Button) findViewById(R.id.bt_search_btn);
+       // pairedList = (ListView) findViewById(R.id.paired_devices);
+        button = (Button) findViewById(R.id.patient_info);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent patientIntent = new Intent(MainActivity.this, PatientActivity.class);
+                MainActivity.this.startActivity(patientIntent);
+                MainActivity.this.finish();
+            }
+        });
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         mArrayAdapter = new ArrayAdapter<BluetoothDevice>(this, R.layout.device_name);

@@ -2,44 +2,78 @@ package com.example.ernestwong.sidekick;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Html;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.TextView;
+import android.view.View.OnClickListener;
 
-public class PatientActivity extends Activity {
+public class PatientActivity extends Activity implements OnClickListener {
 
-    ListView patientHistoryView;
-    ListView patientSurgeryView;
-    ListView patientAllergyView;
-    ListView patientMedicationView;
-    ListView patientSocialView;
-    ListView patientSubstanceView;
+    TextView patientHistoryView;
+    TextView patientSurgeryView;
+    TextView patientAllergyView;
+    TextView patientMedicationView;
+    TextView patientSocialView;
+    TextView patientSubstanceView;
 
-    ArrayAdapter<String> historyList;
-    ArrayAdapter<String> surgeryList;
-    ArrayAdapter<String> allergyList;
-    ArrayAdapter<String> medicationList;
-    ArrayAdapter<String> socialList;
-    ArrayAdapter<String> substanceList;
+    ArrayAdapter<String> historyText;
+    ArrayAdapter<String> surgeryText;
+    ArrayAdapter<String> allergyText;
+    ArrayAdapter<String> medicationText;
+    ArrayAdapter<String> socialText;
+    ArrayAdapter<String> substanceText;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        patientHistoryView = (ListView) findViewById(R.id.patient_history_list);
-        patientSurgeryView = (ListView) findViewById(R.id.patient_surgeries_list);
-        patientAllergyView = (ListView) findViewById(R.id.patient_allergies_list);
-        patientMedicationView = (ListView) findViewById(R.id.patient_medications_list);
-        patientSocialView = (ListView) findViewById(R.id.patient_social_list);
-        patientSubstanceView = (ListView) findViewById(R.id.patient_substance_list);
-        
-        historyList = new ArrayAdapter<String>(this, R.layout.patient_layout);
-        surgeryList = new ArrayAdapter<String>(this, R.layout.patient_layout);
-        allergyList = new ArrayAdapter<String>(this, R.layout.patient_layout);
-        medicationList = new ArrayAdapter<String>(this, R.layout.patient_layout);
-        socialList = new ArrayAdapter<String>(this, R.layout.patient_layout);
-        substanceList = new ArrayAdapter<String>(this, R.layout.patient_layout);
+        super.onCreate(savedInstanceState);
 
-        populate();
+        setContentView(R.layout.patient_layout);
+
+        patientHistoryView = (TextView) findViewById(R.id.history_text);
+        patientSurgeryView = (TextView) findViewById(R.id.surgeries_text);
+        patientAllergyView = (TextView) findViewById(R.id.allergies_text);
+        patientMedicationView = (TextView) findViewById(R.id.medications_text);
+        patientSocialView = (TextView) findViewById(R.id.social_text);
+        patientSubstanceView = (TextView) findViewById(R.id.substance_text);
+
+        patientHistoryView.setText(Html.fromHtml("&#8226; Diabetes Type 2 (since 1995) <br> &#8226; Congestive Heart Failure <br> &#8226; Atrial Fibrillatio <br> &#8226; Myocardial Infarct (2008) – treated with CABG <br> &#8226; Osteoporosis\nDementia <br> &#8226; Previous deep vein thrombosis (2013) "));
+        patientSurgeryView.setText(Html.fromHtml("&#8226; Right hip fracture repair (2013) – complicated by deep vein thrombosis post-operatively<br> &#8226; Coronary Artery Bypass Graft x2 (2008) <br> &#8226; Cataract repair (L eye in 2006, R eye in 2007) "));
+        patientAllergyView.setText(Html.fromHtml("&#8226; Furosemide<br> &#8226; Bisoprolol <br> &#8226; Janumet (Sitagliptin and metformin) <br> &#8226; Warfarin <br>  &#8226; Aspirin <br> &#8226; Alendronate "));
+        patientMedicationView.setText(Html.fromHtml("&#8226; Furosemide<br> &#8226; Bisoprolol <br> &#8226; Janumet (Sitagliptin and metformin) <br> &#8226; Warfarin <br>  &#8226; Aspirin <br> &#8226; Alendronate "));
+        patientSocialView.setText(Html.fromHtml("&#8226; Lives in ‘ABC’ nursing home <br> &#8226; Husband deceased <br> &#8226; 2 children – son lives in New York, daughter lives in Markham (Power of Attorney) <br> &#8226; No other friends or relatives in the city "));
+        patientSubstanceView.setText(Html.fromHtml("&#8226; No smoking, alcohol or recreational drug use "));
+
+
+
+/*
+        historyText = new ArrayAdapter<String>(this, R.layout.layout, R.id.device_id);
+        surgeryText = new ArrayAdapter<String>(this, R.layout.layout, R.id.device_id);
+        allergyText = new ArrayAdapter<String>(this, R.layout.layout, R.id.device_id);
+        medicationText = new ArrayAdapter<String>(this, R.layout.layout, R.id.device_id);
+        socialText = new ArrayAdapter<String>(this, R.layout.layout, R.id.device_id);
+        substanceText = new ArrayAdapter<String>(this, R.layout.layout, R.id.device_id);
+
+*/
+/*
+        patientHistoryView.setAdapter(historyText);
+
+        patientSurgeryView.setAdapter(surgeryText);
+
+        //historyText.add("dsfds");
+        patientAllergyView.setAdapter(allergyText);
+        patientMedicationView.setAdapter(medicationText);
+        patientSocialView.setAdapter(socialText);
+        patientSubstanceView.setAdapter(substanceText);
+        */
+
     }
 
+    public void onClick() {
+
+    }
     private void populate() {
-        historyList.add("testing string");
     }
+
+    private void iniTextViews(){}
 }
