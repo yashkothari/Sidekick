@@ -3,10 +3,9 @@ package com.example.ernestwong.sidekick;
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
-importu android.os.Bundle;
 
 public class PatientActivity extends Activity {
 
@@ -60,33 +59,51 @@ public class PatientActivity extends Activity {
         patientSocialView.setText(Html.fromHtml("&#8226; Lives in ‘ABC’ nursing home <br> &#8226; Husband deceased <br> &#8226; 2 children – son lives in New York, daughter lives in Markham (Power of Attorney) <br> &#8226; No other friends or relatives in the city "));
         patientSubstanceView.setText(Html.fromHtml("&#8226; No smoking, alcohol or recreational drug use "));
 
-
-
-/*
-        historyText = new ArrayAdapter<String>(this, R.layout.layout, R.id.device_id);
-        surgeryText = new ArrayAdapter<String>(this, R.layout.layout, R.id.device_id);
-        allergyText = new ArrayAdapter<String>(this, R.layout.layout, R.id.device_id);
-        medicationText = new ArrayAdapter<String>(this, R.layout.layout, R.id.device_id);
-        socialText = new ArrayAdapter<String>(this, R.layout.layout, R.id.device_id);
-        substanceText = new ArrayAdapter<String>(this, R.layout.layout, R.id.device_id);
-
-*/
-/*
-        patientHistoryView.setAdapter(historyText);
-
-        patientSurgeryView.setAdapter(surgeryText);
-
-        //historyText.add("dsfds");
-        patientAllergyView.setAdapter(allergyText);
-        patientMedicationView.setAdapter(medicationText);
-        patientSocialView.setAdapter(socialText);
-        patientSubstanceView.setAdapter(substanceText);
-        */
-
+        patientHistoryHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleText(patientHistoryView);
+            }
+        });
+        patientSurgeryHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleText(patientSurgeryView);
+            }
+        });
+        patientAllergyHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleText(patientAllergyView);
+            }
+        });
+        patientMedicationHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleText(patientMedicationView);
+            }
+        });
+        patientSocialHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleText(patientSocialView);
+            }
+        });
+        patientSubstanceHeader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toggleText(patientSubstanceView);
+            }
+        });
     }
 
-    private void populate() {
-    }
+    private void toggleText(TextView textview) {
+        boolean hidden = (textview.getVisibility() == View.GONE);
 
-    private void iniTextViews(){}
+        if(hidden) {
+            textview.setVisibility(View.VISIBLE);
+        } else {
+            textview.setVisibility(View.GONE);
+        }
+    }
 }

@@ -10,6 +10,7 @@
 
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content">
             <TextView
@@ -20,6 +21,7 @@
                 android:text="Past Medical History"
                 android:background="@color/theme"
                 android:textColor="#FFFFFF"
+                android:clickable="true"
                 android:textSize="25sp"
              />
 
@@ -32,6 +34,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:id="@+id/history_text"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
@@ -43,6 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
+                android:clickable="true"
                 android:text="Previous Surgeries"
                 android:background="@color/theme"
                 android:textColor="#FFFFFF"
@@ -56,6 +61,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:id="@+id/surgeries_text"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
@@ -67,6 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
+                android:clickable="true"
                 android:text="Allergies"
                 android:background="@color/theme"
                 android:textColor="#FFFFFF"
@@ -80,6 +88,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:id="@+id/allergies_text"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
@@ -91,6 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
+                android:clickable="true"
                 android:text="Medications"
                 android:background="@color/theme"
                 android:textColor="#FFFFFF"
@@ -104,6 +115,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:id="@+id/medications_text"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
@@ -115,6 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
+                android:clickable="true"
                 android:text="Social History"
                 android:background="@color/theme"
                 android:textColor="#FFFFFF"
@@ -128,6 +142,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:id="@+id/social_text"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -136,6 +152,7 @@
             <TextView
                 android:id="@+id/patient_substance"
                 android:layout_width="match_parent"
+                android:clickable="true"
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:text="Substance Abuse"
@@ -151,6 +168,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:id="@+id/substance_text"
+                android:textSize="20sp"
+                android:layout_margin="10dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>
     </LinearLayout>
