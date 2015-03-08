@@ -2,13 +2,6 @@
 <items version="2" >
 
     <item
-        jar="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/pre-dexed/debug/classes-c65801c3091773d269e01ff372bdae457c49924f.jar" />
-    </item>
-    <item
         jar="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -21,6 +14,27 @@
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
         <dex dex="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-201e077df02556bb6189c15235dd6843a37d8bd5.jar" />
+    </item>
+    <item
+        jar="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/exploded-aar/com.github.eluleci/flatui/3.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d1089efa4a24767294278997764bea2fda31ccca">
+        <dex dex="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/pre-dexed/debug/classes-b6e2a4c354f975256e4e70255f843bfe2b7076c9.jar" />
+    </item>
+    <item
+        jar="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/pre-dexed/debug/classes-c65801c3091773d269e01ff372bdae457c49924f.jar" />
+    </item>
+    <item
+        jar="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/exploded-aar/info.hoang8f/fbutton/1.0.5/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c12397a785c3b1868fbebeffc9553457b27803f">
+        <dex dex="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/pre-dexed/debug/classes-c4fb34ac94ce00b2caaa16107cddab82ddb9ca33.jar" />
     </item>
     <item
         jar="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"

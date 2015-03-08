@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:id="@+id/main_scroll"
     android:layout_height="match_parent" >
 
     <LinearLayout
@@ -29,6 +29,10 @@
                 android:layout_height="wrap_content">
 
             </ListView>
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/history_text"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
          <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -49,6 +53,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </ListView>
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/surgeries_text"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -69,6 +77,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </ListView>
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/allergies_text"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -89,6 +101,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </ListView>
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/medications_text"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -109,6 +125,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </ListView>
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/social_text"
+                android:layout_height="wrap_content" />
         </LinearLayout>
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
@@ -128,6 +148,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </ListView>
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/substance_text"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

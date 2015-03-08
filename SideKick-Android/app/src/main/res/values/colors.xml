@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="theme" type="color">#4aaf75</item>
-    <item name="text-theme" type="color">#636363</item>
-    <item name="theme-header" type="color">#5fc892</item>
+    <item name="text_theme" type="color">#636363</item>
+    <item name="theme_header" type="color">#5fc892</item>
 </resources>
