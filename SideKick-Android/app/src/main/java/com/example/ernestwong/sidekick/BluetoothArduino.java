@@ -92,7 +92,6 @@ public class BluetoothArduino extends Thread {
             Log.d("Breakbpoint", "Connecting to robot");
             UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
             mBlueSocket = mBlueRobo.createRfcommSocketToServiceRecord(uuid);
-            mBlueSocket.connect();
             mOut = mBlueSocket.getOutputStream();
             mIn = mBlueSocket.getInputStream();
             connected = true;
@@ -109,7 +108,13 @@ public class BluetoothArduino extends Thread {
     }
 
     public void run(){
-        boolean run = true;
+        boolean run = false;
+        try {
+            mBlueSocket.connect();
+        } catch(IOException e) {
+            Log.e("error", e.toString());
+        }
+
         while (run) {
             if(connected) {
                 Log.d("breakpoint", "running thread");
@@ -186,7 +191,6 @@ public class BluetoothArduino extends Thread {
         try {
             Log.d("breakpoint", "sending message, " + connected + " " + msg.getBytes());
             if(connected) {
-                while(connected)
                 mOut.write(msg.getBytes());
                 Log.d("breakpoint", "sending message" + msg.getBytes());
             }

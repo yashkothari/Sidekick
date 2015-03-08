@@ -6,6 +6,7 @@ import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -43,9 +44,16 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
 
-                Intent patientIntent = new Intent(MainActivity.this, PatientActivity.class);
-                MainActivity.this.startActivity(patientIntent);
-                MainActivity.this.finish();
+                new Handler().postDelayed(new Runnable(){
+                    @Override
+                    public void run() {
+                        Intent patientIntent = new Intent(MainActivity.this, PatientActivity.class);
+                        MainActivity.this.startActivity(patientIntent);
+                        MainActivity.this.finish();
+                    }
+                }, 1000);
+
+
             }
         });
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -55,24 +63,6 @@ public class MainActivity extends ActionBarActivity {
 
         mBlue = BluetoothArduino.getInstance("Example");
         mBlue.Connect();
-        /*
-        pairedList.setAdapter(mArrayAdapter);
-
-        pairedList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("click", position + "");
-                String address = mArrayAdapter.getItem(position).getAddress();
-                mBluetoothAdapter.cancelDiscovery();
-                ConnectThread thread = new ConnectThread(mBluetoothAdapter.getRemoteDevice(address));
-                thread.start();
-                if (connectToDevice(address)) {
-                    Log.d("success", "connected");
-                }
-            }
-        });
-        */
-
     }
 
     public void searchDevices(View v) {
