@@ -20,8 +20,12 @@ public class BluetoothConnectionReceiver extends BroadcastReceiver {
             BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
             Log.d("Device", device.getName() + " " + device.getAddress());
 
-            if(device.getName().contains("SideKick"))
-                MainActivity.mArrayAdapter.add(device);
+            if(MainActivity.mBlue.Connect()) {
+                Log.d("Bluetooth", "Connected!");
+            } else {
+                Log.d("Bluetooth", "Failed");
+            }
+
         }
         /*if(BluetoothDevice.ACTION_ACL_CONNECTED.equals(action.getAction())){
             //Do something with bluetooth device connection

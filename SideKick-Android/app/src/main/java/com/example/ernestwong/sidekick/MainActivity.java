@@ -11,7 +11,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -24,47 +23,59 @@ public class MainActivity extends ActionBarActivity {
 
     BluetoothAdapter mBluetoothAdapter;
     Set<BluetoothDevice> pairedDevices;
-    BluetoothConnectionReceiver mReceiver;
+    BluetoothConnectionReceiver mReceiver = new BluetoothConnectionReceiver();
     ListView pairedList;
-    public static ArrayAdapter<BluetoothDevice> mArrayAdapter;
     Button button;
-    public static final int REQUEST_ENABLE_BT = 1;
-    public static final UUID UUID_BT_SERIAL = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+    public static ArrayAdapter<BluetoothDevice> mArrayAdapter;
+    IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
 
+    public static final int REQUEST_ENABLE_BT = 1;
+    public static final UUID UUID_BT_SERIAL = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+
+    public static BluetoothArduino mBlue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        mArrayAdapter = new ArrayAdapter<BluetoothDevice>(this, R.layout.device_name);
-        button = (Button) findViewById(R.id.bt_search_btn);
-        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-        mReceiver = new BluetoothConnectionReceiver();
         pairedList = (ListView) findViewById(R.id.paired_devices);
+        button = (Button) findViewById(R.id.bt_search_btn);
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
+        mArrayAdapter = new ArrayAdapter<BluetoothDevice>(this, R.layout.device_name);
         registerReceiver(mReceiver, filter);
+
+        mBlue = BluetoothArduino.getInstance("Example");
+        mBlue.Connect();
+        /*
+        pairedList.setAdapter(mArrayAdapter);
+
         pairedList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("click", position + "");
                 String address = mArrayAdapter.getItem(position).getAddress();
-                if(connectToDevice(address)) {
+                mBluetoothAdapter.cancelDiscovery();
+                ConnectThread thread = new ConnectThread(mBluetoothAdapter.getRemoteDevice(address));
+                thread.start();
+                if (connectToDevice(address)) {
                     Log.d("success", "connected");
                 }
             }
         });
-        pairedList.setAdapter(mArrayAdapter);
+        */
+
     }
 
     public void searchDevices(View v) {
         mArrayAdapter.clear();
         mBluetoothAdapter.startDiscovery();
+        mBlue = BluetoothArduino.getInstance("Example");
     }
     @Override
     protected void onResume() {
         super.onResume();
         handleBluetoothConnection();
-        checkPairedDevices();
+        //checkPairedDevices();
     }
 
     @Override
@@ -79,8 +90,10 @@ public class MainActivity extends ActionBarActivity {
             mBluetoothAdapter.cancelDiscovery();
             BluetoothSocket socket = device.createRfcommSocketToServiceRecord(UUID_BT_SERIAL);
             socket.connect();
+            Log.d("Connected", "sucess");
             return true;
         } catch(IOException e) {
+           // socket.close();
             Log.e("Connect error", e.toString());
             return false;
         }
@@ -91,8 +104,14 @@ public class MainActivity extends ActionBarActivity {
         if (pairedDevices.size() > 0) {
             // Loop through paired devices
             for (BluetoothDevice device : pairedDevices) {
-                if(device.getName().contains("SideKick"))
-                    mArrayAdapter.add(device);
+                mArrayAdapter.add(device);
+                if(device.getName().equals("Example")) {
+                    if(mBlue.Connect()) {
+                        Log.d("Bluetooth", "Connected!");
+                    } else {
+                        Log.d("Bluetooth", "Failed");
+                    }
+                }
             }
         }
     }
