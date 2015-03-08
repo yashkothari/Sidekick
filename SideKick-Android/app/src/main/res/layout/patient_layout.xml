@@ -5,38 +5,102 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/patient_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:text="Past Medical History"
+                android:background="@color/theme"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                 />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+            </ListView>
         </LinearLayout>
 
          <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+            <TextView
+                android:id="@+id/patient_surgeries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:text="Previous Surgeries"
+                android:background="@color/theme"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                 />
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+            <TextView
+                android:id="@+id/patient_allergies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:text="Allergies"
+                android:background="@color/theme"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                 />
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+            <TextView
+                android:id="@+id/patient_medications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:text="Medications"
+                android:background="@color/theme"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                 />
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+            <TextView
+                android:id="@+id/patient_social"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:text="Social History"
+                android:background="@color/theme"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                 />
+        </LinearLayout>
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/patient_substance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:text="Substance Abuse"
+                android:background="@color/theme"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                 />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
