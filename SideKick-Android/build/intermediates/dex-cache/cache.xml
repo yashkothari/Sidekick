@@ -2,6 +2,13 @@
 <items version="2" >
 
     <item
+        jar="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/pre-dexed/debug/classes-c65801c3091773d269e01ff372bdae457c49924f.jar" />
+    </item>
+    <item
         jar="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -16,18 +23,18 @@
         <dex dex="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-201e077df02556bb6189c15235dd6843a37d8bd5.jar" />
     </item>
     <item
-        jar="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/pre-dexed/debug/classes-c65801c3091773d269e01ff372bdae457c49924f.jar" />
-    </item>
-    <item
         jar="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
         <dex dex="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-f9a14d981e9b989589097bebf288994a759d3f55.jar" />
+    </item>
+    <item
+        jar="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/exploded-aar/com.beardedhen/androidbootstrap/1.1.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="99d047d8e4c7b63b6566867bf00fcbdb8c306c8e">
+        <dex dex="/Users/ernestwong/AndroidStudioProjects/SideKick/SideKick-Android/app/build/intermediates/pre-dexed/debug/classes-6cf1a255506bfd5f11755ea3417e08189801cb25.jar" />
     </item>
 
 </items>
